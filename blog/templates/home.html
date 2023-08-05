@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+<!-- fjlajdlkjfa -->
+{% block content %}
+<!-- falfj -->
+{% if request.user.is_authenticated %}
+<!-- jflkasdjflsda -->
+{% for post in posts %} {% if request.user.username == post.author.username %}
+<div class="post-entry">
+  <h2><a href="{% url 'post_detail' post.pk %}">{{ post.title }}</a></h2>
+  <p>{{ post.body }}</p>
+  <p>{{ post.author.username }}</p>
+  {# Displaying the author's username #}
+</div>
+{% endif %} {% endfor %}
+<!-- jflkajfldsa -->
+{% else %}
+<p>Please Login to write a blog!</p>
+{% endif %} {% endblock content %}
